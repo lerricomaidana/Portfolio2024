@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "6d2dd675-1bed-423a-a3c4-8131fbe207a6",
+		"name": "MyStoreAPI - Arrays",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35352344"
+	},
+	"item": [
+		{
+			"name": "Categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mystoreapi.com/catalog/categories",
+					"protocol": "https",
+					"host": [
+						"mystoreapi",
+						"com"
+					],
+					"path": [
+						"catalog",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validacion de respuesta de un vector \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    //console.log(jsonData.products[0].id);\r",
+							"   // console.log(jsonData.products[5]);\r",
+							"    pm.expect(jsonData.products[1].name).to.eql(\"Pen\");\r",
+							"    pm.expect(jsonData.products[2].id).to.eql(882512);\r",
+							"    pm.expect(jsonData.products[8].category).to.contain(\"Concrete\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mystoreapi.com/catalog/products?limit=20&skip=1",
+					"protocol": "https",
+					"host": [
+						"mystoreapi",
+						"com"
+					],
+					"path": [
+						"catalog",
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "20"
+						},
+						{
+							"key": "skip",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Productos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mystoreapi.com/catalog/products?limit=20&skip=1",
+							"protocol": "https",
+							"host": [
+								"mystoreapi",
+								"com"
+							],
+							"path": [
+								"catalog",
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "skip",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "264"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Jul 2024 18:56:01 GMT"
+						},
+						{
+							"key": "x-amzn-Remapped-Date",
+							"value": "Tue, 16 Jul 2024 18:56:01 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ab96fe61-29fc-45f3-8147-db619200e718"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "bBNKLF5XIAMEKlw="
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"3ce-51pPwBVIeU1sSwwquYGB8MuEur0\""
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-6696c240-255979fa22d749e915136861;Parent=1d8798b49310b42b;Sampled=0;lineage=1dfeef2e:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 aadc36bc93844687d7ba70137223bc20.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "IAD55-P2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "693xe21NImsu7PWy5m4BHDOQxK16ANPKyLOck5CVtD8IDSfaKMZLIQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"products\": [\n        {\n            \"id\": 882497,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882498,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882512,\n            \"name\": \"Keyboard\",\n            \"category\": null\n        },\n        {\n            \"id\": 882519,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882520,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882521,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882523,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882524,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882530,\n            \"name\": \"TV \",\n            \"category\": \"Intelligent Concrete Table\"\n        },\n        {\n            \"id\": 882538,\n            \"name\": \"Keyboard\",\n            \"category\": null\n        },\n        {\n            \"id\": 882539,\n            \"name\": \"Keyboard\",\n            \"category\": null\n        },\n        {\n            \"id\": 882545,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882546,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882547,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882548,\n            \"name\": \"Pen\",\n            \"category\": \"\"\n        },\n        {\n            \"id\": 882552,\n            \"name\": \"Ergonomic Fresh Ball\",\n            \"category\": \"fruits\"\n        },\n        {\n            \"id\": 882557,\n            \"name\": \"Sleek Granite Chips\",\n            \"category\": \"fruits\"\n        },\n        {\n            \"id\": 882562,\n            \"name\": \"TV\",\n            \"category\": \"Plastico\"\n        },\n        {\n            \"id\": 882573,\n            \"name\": \"Keyboard\",\n            \"category\": null\n        },\n        {\n            \"id\": 882574,\n            \"name\": \"Keyboard\",\n            \"category\": null\n        }\n    ],\n    \"summary\": {\n        \"count\": 469366\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "POR ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mystoreapi.com/catalog/product/884339",
+					"protocol": "https",
+					"host": [
+						"mystoreapi",
+						"com"
+					],
+					"path": [
+						"catalog",
+						"product",
+						"884339"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

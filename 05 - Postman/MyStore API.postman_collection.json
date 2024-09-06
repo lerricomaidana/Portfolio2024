@@ -1,0 +1,436 @@
+{
+	"info": {
+		"_postman_id": "08ab09f3-3b31-48f9-8b4f-4ac5174fee50",
+		"name": "MyStore API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35352344"
+	},
+	"item": [
+		{
+			"name": "API crear productos en la tienda - Laptop variable local",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.variables.set('name','laptop');\r",
+							"pm.variables.set('price',1500);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"price\": \"{{price}}\",\r\n  \"manufacturer\": \"dell\",\r\n  \"category\": \"computers\",\r\n  \"description\": \"laptop dell intel I7, 8GB RAM\",\r\n  \"tags\": \"tecnologia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/catalog/product",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API crear productos en la tienda - Laptop variable de ambiente",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.variables.set('name','laptop');\r",
+							"pm.variables.set('price',1500);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"price\": \"{{price}}\",\r\n  \"manufacturer\": \"dell\",\r\n  \"category\": \"computers\",\r\n  \"description\": \"laptop dell intel I7, 8GB RAM\",\r\n  \"tags\": \"tecnologia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/catalog/product",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API crear productos en la tienda - Laptop prioriza variable local",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.variables.set('name','laptop');\r",
+							"pm.variables.set('price',1500);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.variables.set('name','laptop45');\r",
+							"pm.variables.set('price',1550);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"price\": \"{{price}}\",\r\n  \"manufacturer\": \"dell\",\r\n  \"category\": \"computers\",\r\n  \"description\": \"laptop dell intel I7, 8GB RAM\",\r\n  \"tags\": \"tecnologia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/catalog/product",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API crear productos en la tienda - televisor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Televisor\",\r\n  \"price\": 850,\r\n  \"manufacturer\": \"Phillips\",\r\n  \"category\": \"TVs\",\r\n  \"description\": \"Televisor Phillips 32 pulgadas\",\r\n  \"tags\": \"tecnologia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/catalog/product",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API traer producto por ID - laptop",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/catalog/product/1522251",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"product",
+						"1522251"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API traer producto por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL-GLOBAL}}/catalog/product/{{ID-PRODUCTO}}",
+					"host": [
+						"{{URL-GLOBAL}}"
+					],
+					"path": [
+						"catalog",
+						"product",
+						"{{ID-PRODUCTO}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API traer producto por ID - televisor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/catalog/product/1522259",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"product",
+						"1522259"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API traer producto por ID: 123",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/catalog/product/123",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"product",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API borrar producto televisor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/catalog/product/1522259",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"product",
+						"1522259"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API borrar producto no existente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/catalog/product/111",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"product",
+						"111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificacion de eliminacion producto televisor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/catalog/product/1522259",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"product",
+						"1522259"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API traer productos por categoria",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//crear variables en tiempo de ejecucion\r",
+							"pm.globals.set(\"categoria1\", \"hola\");\r",
+							"\r",
+							"pm.collectionVariables.set(\"categoria2\", \"hola2\");\r",
+							"\r",
+							"pm.environment.set(\"categoria3\", \"hola3\");\r",
+							"\r",
+							"//leer las variables\r",
+							"\r",
+							"console.log(pm.globals.get(\"URL\"));\r",
+							"\r",
+							"console.log(pm.environment.get(\"ID-PRODUCTO\"));\r",
+							"\r",
+							"console.log(pm.collectionVariables.get(\"variableprueba\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/catalog/category/{{CATEGORIA}}/products?limit=10&skip=1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"category",
+						"{{CATEGORIA}}",
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "skip",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API traer todos los productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/catalog/products?limit=10&skip=1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"catalog",
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "skip",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Variable Global",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL-GLOBAL}}",
+					"host": [
+						"{{URL-GLOBAL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "categoria2",
+			"value": ""
+		},
+		{
+			"key": "variableprueba",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
