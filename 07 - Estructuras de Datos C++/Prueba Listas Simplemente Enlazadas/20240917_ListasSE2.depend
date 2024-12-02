@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1726619321 source:c:\users\thinkcentre\desktop\20240917_listasse2\main.cpp
+	<iostream>
+	<locale.h>
+
